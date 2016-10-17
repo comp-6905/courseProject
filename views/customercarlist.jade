@@ -27,7 +27,7 @@ html.no-js(lang='en')
       // Codrops top bar
       .codrops-top
         a(href='')
-          strong  Welcome to the G-HELP system!
+          strong  Welcome to the M-CarShare system!
         span.right
           a(href='/')
             strong Logout
@@ -37,7 +37,7 @@ html.no-js(lang='en')
       // / Codrops top bar
       header#headerAdmin
         h1
-          | Mentor
+          | Employee
           table(style='width:90%')
             tr
               th
@@ -46,63 +46,3 @@ html.no-js(lang='en')
                 td= item.name
           span
         nav.codrops-demos
-      //- .row1col1
-      //-   | Reminder
-      //-   table(style='width:90%')
-      //-     tr
-      //-       th Name
-      //-       th ID
-      //-       th email
-      //- 
-      //-     - each item in stu
-      //-       tr
-      //-         td= item.name
-      //-         td= item.studentID
-      //-         td= item.student_email
-      //- 
-      //- .row1col2
-      //-   strong(style='font-size:20px') Events list that has been published
-      //-   table(style='width:90%')
-      //-     tr
-      //-       th NO.
-      //-       th Date Time
-      //-       th Name
-      //-       th Description
-      //-     - each item in results
-      //-       tr
-      //-         td= item.eventsID
-      //-         td= item.DateAndTime
-      //-         td= item.eventsName
-      //-         td= item.eventsDesciption
-      //- .row1col3
-      //-   | your mentee's timeline
-      //-   table(style='width:90%')
-      //-     tr
-      //-       th Time
-      //-       th Events
-      //-       th Del
-      //- 
-      //-     - each item in times
-      //-       if item
-      //-         tr
-      //-         form(action='/deltimeline', method='POST')
-      //-           td= item.time
-      //-           td= item.eventName
-      //-           td
-      //-             input(type='text', name='delete',hidden='hidden',value=item.eventName)
-      //-             input(type='submit', value='Del')
-      //- 
-      //-         tr
-      //-    if times
-      //-       form(action='/newtimeline', method='POST')
-      //-         td
-      //-           | Time:
-      //-           input(type='datetime', name='DateTime',size='6')
-      //-         td
-      //-           | eventName:
-      //- 
-      //-           input(type='text', name='Name',size='6')
-      //-         - each item in stu
-      //-           input(type='text', value=item.studentID,name='studentID',hidden='hidden')
-      //-         td
-      //-           input(type='submit', value='Add new')
