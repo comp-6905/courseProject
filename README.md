@@ -6,12 +6,26 @@ Group-3
 
 ## Current Progress:
 
+Customer Login module
+
+Admin Login module
+
+Customer Register module
+
+Car listing for Customer
+
+Car listing for Admin
+
+Add car to system by Admin
+
+
+
 Prototype including:
 
 > First page
-  
+
 > About page
-  
+
 > Register page
-  
+
 > Login page
