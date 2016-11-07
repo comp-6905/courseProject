@@ -1,0 +1,93 @@
+doctype html
+//if lt IE 7
+  html.no-js.ie6.lt8(lang='en')
+//if IE 7
+  html.no-js.ie7.lt8(lang='en')
+//if IE 8
+  html.no-js.ie8.lt8(lang='en')
+//if IE 9
+  html.no-js.ie9(lang='en')
+// [if (gt IE 9)|!(IE)] <!
+html.no-js(lang='en')
+  // <![endif]
+  //头文件,设定文件的显示格式以及搜索的CSS文件范围,有的属于demo,有的属于style.css
+  head
+    meta(charset='UTF-8')
+    // <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    title M-CarShare
+    link(rel='stylesheet', type='text/css', href='/stylesheets/demo.css')
+    link(rel='stylesheet', type='text/css', href='/stylesheets/style.css')
+    link(rel='stylesheet', type='text/css', href='/stylesheets/animate-custom.css')
+
+  //页面主体,对应于html文件
+  body
+    .container
+      // Codrops top bar
+      .codrops-top
+        a(href='')
+          strong  Welcome to the M-CarShare system!
+        span.right
+          a(href=' ')
+            a(href='/logout')
+              strong Logout
+        .clr
+      // / Codrops 标题
+
+      header
+        img(src='images/title.png', alt='brandtitle', width='739', height='125', align='centre')
+        h1
+          | Car Management
+          span
+        nav.codrops-demos
+        form(action='/addcar', autocomplete='on', method='POST')
+          p#CarID(style='display:block;')
+            label.CarID(for='CarID', data-icon='c') Please Input Car ID
+            input#CarID(name='CarID', required='required', type='text', placeholder='201601001')
+          p
+            label.Brand(for='Brand', data-icon='b') Please Input Car Brand
+            input#Brand(name='Brand', required='required', type='text', placeholder='Honda')
+          p
+            label.Class(for='Class', data-icon='c') Please Input Car Class
+            input#Class(name='Class', required='required', type='text', placeholder='A, B, C')
+          p
+            label.Price(for='Price', data-icon='p') Please Input Rent Price
+            input#Price(name='Price', required='required', type='text', placeholder='Daily basis, e.g. 25')
+          p
+            label.Location(for='Location', data-icon='l') Please Input Location of Car
+            input#Location(name='Location', required='required', type='text', placeholder='MUN')
+          p
+            label.License(for='License', data-icon='l') Please Input License of Car
+            input#License(name='License', required='required', type='text', placeholder='NL001')
+          p
+            label.Color(for='Color', data-icon='l') Please Input Color of Car
+            input#Color(name='Color', required='required', type='text', placeholder='Black')
+          p
+            label.Customer(for='Customer', data-icon='l')
+            input#Customer(name='Customer', type='hidden', placeholder='')
+          
+          button(type='submit') Add Car
+          
+          table.table-fill
+                      thead
+                        tr 
+                         
+                           th.text-left CarID
+                           th.text-left Brand
+                           th.text-left Class
+                           th.text-left Price
+                           th.text-left Location
+                           th.text-left License
+                           th.text-left Color
+                           th.text-left Customer
+                      tbody
+                          each car, i in cars
+                              tr
+                                  td
+                                   a #{car._id}
+                                  td #{car.brand}
+                                  td #{car.classType}
+                                  td #{car.price}
+                                  td #{car.parkLocation}
+                                  td #{car.license}
+                                  td #{car.color}
+                                  td #{car.customer}

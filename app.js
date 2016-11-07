@@ -1,15 +1,27 @@
 //导入项目需要的包
 var express = require('express');
+
+var expressSession = require('express-session');
+var stylus = require('stylus');
+var nib = require('nib');
+
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+
+var multer          =       require('multer');
+var upload      =   multer({ dest: './public/images/userpicture/'});
+
+var mongoose = require('mongoose');
+var passport = require('passport');
+var LocalStrategy = require('passport-local').Strategy;
 var mongo = require('mongodb');
 var session = require('express-session')
 var monk = require('monk');
 //连接到远程的数据库
-var db = monk('luojiamun:87664653@ds053196.mlab.com:53196/comp6905');
+var db = monk('localhost:27017/mcarshare');
 
 //路由文件
 var routes = require('./routes/index');
@@ -17,6 +29,11 @@ var users = require('./routes/users');
 
 //Express实例化并赋值给变量的代码
 var app = express();
+function compile(str, path) {
+	  return stylus(str)
+	    .set('filename', path)
+	    .use(nib())
+	}
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -24,10 +41,19 @@ app.set('view engine', 'jade');
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+app.use(expressSession({secret:'somesecrettokenhere',}));
 app.use(logger('dev'));
 app.use(bodyParser.json());
+// app.use(bodyParser.urlencoded({ extended: false }));
+app.use(stylus.middleware(
+		  { src: __dirname + '/public'
+		  , compile: compile
+		  }
+		));
+app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+
 /**
 告诉静态文件的位置;例如照片的位置在c:\node\nodetest1\public\images，
 可以使用http://localhost:3000/images的链接进入
@@ -35,6 +61,22 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 //connect to db
+
+app.use(require('express-session')({
+    secret: 'keyboard cat',
+    resave: false,
+    saveUninitialized: false
+}));
+app.use(passport.initialize());
+app.use(passport.session());
+
+var Account = require('./models/account');
+passport.use(new LocalStrategy(Account.authenticate()));
+passport.serializeUser(Account.serializeUser());
+passport.deserializeUser(Account.deserializeUser());
+
+mongoose.connect('mongodb://localhost/mcarshare');
+
 app.use(function (req, res, next) {
     //console.log(db);
     req.db = db;
@@ -49,17 +91,42 @@ app.use(function (req, res, next) {
 app.use('/', routes);
 app.use('/users', users);
 
-app.use(session({
-  group: 'sessiongroup',
-  username: 'username',
-  password: 'spassword',
-  resultCustomerID:'1234567',
-  secret: 'hello',
-  resave: false,
-  saveUninitialized: true,
-  duration: 30 * 60 * 1000,
-  activeDuration: 5 * 60 * 1000,
+app.use(multer({ dest: './public/images/userpicture/',
+    rename: function (filename) {
+        return filename;
+    },
+    onFileUploadStart: function (file) {
+        console.log(file.originalname + ' is starting ...');
+    },
+    onFileUploadComplete: function (file) {
+        console.log(file.fieldname + ' uploaded to  ' + file.path)
+    }
 }));
+
+app.get('/picture',function(req,res){
+      res.render('setpicture', { user : req.user });
+});
+
+app.post('/api/photo',function(req,res){
+    upload(req,res,function(err) {
+        if(err) {
+            return res.end("Error uploading file.");
+        }
+        res.redirect("/home");
+    });
+});
+
+// app.use(session({
+//   group: 'sessiongroup',
+//   username: 'username',
+//   password: 'spassword',
+//   resultCustomerID:'1234567',
+//   secret: 'hello',
+//   resave: false,
+//   saveUninitialized: true,
+//   duration: 30 * 60 * 1000,
+//   activeDuration: 5 * 60 * 1000,
+// }));
 
 // catch 404 and forward to error handler
 //当无法在app.post查看到错误或者console时,可以关闭如下命令,让错误处理页面停止工作
@@ -69,116 +136,6 @@ app.use(function(req, res, next) {
   err.status = 404;
   next(err);
 });
-
-app.post('/',function(request,response){
-
-  console.log('app.post is working!');
-  var group = request.body.group;
-  var username =request.body.username;
-  var password =request.body.password;
-  var table;
-
-  request.session.group=group;
-  request.session.username=username;
-  request.session.password=password;
-  console.log(request.session);
-
-  switch (group) {
-    case '1':
-    console.log('123232424535345');
-    db.on('error', function (err) { console.error(err); });
-
-    table ='newCustomer';
-    connection.query('SELECT * FROM newCustomer WHERE name=? AND password=?  ',[username,password],function(err,rows){
-      if(err) throw err;
-      // console.log('the searched stuedent result is', rows);
-      if (rows[0] !=null) {
-      var getCustomer =rows[0].CustomerID;
-      // console.log('the selected id is',getCustomer);
-      console.log('the result of newCustomer is 111 ', rows[0]);
-
-        connection.query('SELECT * FROM timeline WHERE CustomerID=?',getCustomer,function(err,events){
-          if(err) throw err;
-          // console.log('the result of timeline is ', events);
-         if (events=="") {
-
-           console.log('start events ', events);
-           events={eventID: 1,
- time: '00.00.2000',
- eventName: 'no event',
- CustomerID: 201422222};
- // console.log('the timeline is', events);
-
- connection.query('SELECT * FROM events',function(err,results){
-   if(err) throw err;
-
-console.log('start serching employee 1', rows[0].employeeID);
- if (rows[0].employeeID!=null) {
-
-   console.log('the employeerrrrr is really', rows[0].employeeID);
-    connection.query('SELECT * FROM employee WHERE employeeID = ?',rows[0].employeeID,function(err,employees){
-      if(err) throw err;
-      console.log('the helllllllll is really', employees);
-  response.render('login', { title: 'login' ,results:results,rows:rows,events:events,employees:employees});
-})
-
- }else {
-   var employees="";
- response.render('login', { title: 'login' ,results:results,rows:rows,events:events,employees:employees});
-
- }
-
-// response.render('login', { title: 'login' ,results:results,rows:rows,events:events});
-})
-
- }else {
-    console.log('start esle 1111 ');
-    console.log('start employee id 1111', rows[0].employeeID);
-   connection.query('SELECT * FROM events',function(err,results){
-     if(err) throw err;
-    //  console.log('the result is really', results);
-
-    if (rows[0].employeeID!=null) {
-
-      console.log('the employeerrrrr is really', rows[0].employeeID);
-       connection.query('SELECT * FROM employee WHERE employeeID = ?',rows[0].employeeID,function(err,employees){
-         if(err) throw err;
-         console.log('the helllllllll is really', employees);
-     response.render('login', { title: 'login' ,results:results,rows:rows,events:events,employees:employees});
-   })
-
-    }else {
-      var employees="";
-    response.render('login', { title: 'login' ,results:results,rows:rows,events:events,employees:employees});
-
-    }
-    //  response.render('login', { title: 'login' ,results:results,rows:rows,events:events});
-   })
- }
-
-
-
-        })
-
-
-
-
-
-      }else{
-        return response.redirect("/fail");
-        // connection.end();
-      }
-    });
-
-      break;
-
-    default:
-
-  }
-  console.log(username);
-
-
-})
 
 // development error handler
 // will print stacktrace

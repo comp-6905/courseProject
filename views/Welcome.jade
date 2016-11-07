@@ -18,19 +18,7 @@ html.no-js(lang='en')
     link(rel='stylesheet', type='text/css', href='/stylesheets/demo.css')
     link(rel='stylesheet', type='text/css', href='/stylesheets/style.css')
     link(rel='stylesheet', type='text/css', href='/stylesheets/animate-custom.css')
-    //这里要执行一段代码
-    //- script(type='text/javascript').
-    //- 
-    //-   function userTypecheck(){
-    //-   if(document.getElementById('usergroupsignup1').checked){
-    //-   document.getElementById('dispHostAdd').style.display = 'none';
-    //-   document.getElementById('dispStuID').style.display = 'block';
-    //-   }id="stuID"
-    //-   if(document.getElementById('usergroupsignup2').checked){
-    //-   document.getElementById('dispStuID').style.display = 'none';
-    //-   document.getElementById('dispHostAdd').style.display = 'block';
-    //-   }
-    //-   }
+
   //页面主体,对应于html文件
   body
     .container
@@ -44,7 +32,7 @@ html.no-js(lang='en')
               strong About us
         .clr
       // / Codrops 标题
-      
+
       header
         img(src='images/title.png', alt='brandtitle', width='739', height='125', align='centre')
         h1
@@ -69,7 +57,7 @@ html.no-js(lang='en')
                     //option(value='4') Administrator
                 br
                 p
-                  label.uname(for='username', data-icon='u')  Your Card Number
+                  label.uname(for='username', data-icon='u')  Your User Name
                   input#username(name='username', required='required', type='text', placeholder='Membership or Employee Card')
                 p
                   label.youpasswd(for='password', data-icon='p')  Your password
@@ -89,27 +77,25 @@ html.no-js(lang='en')
                 h1  Sign up
                 p
                   label.ugroup(for='usergroupsignup') A few more steps to the Membership :)
-                  //- .ugroupsign
-                  //-   input#usergroupsignup1.btn1(onclick='javascript:userTypecheck();', type='radio', required='required',name='usergroupsignup', value='1')
-                  //-   label.btn1(onclick='javascript:userTypecheck();', for='usergroupsignup1') Employee
-                  //-   input#usergroupsignup2.btn1(onclick='javascript:userTypecheck();', type='radio',required='required', name='usergroupsignup', value='2')
-                  //-   label.btn2(onclick='javascript:userTypecheck();', for='usergroupsignup2') Host Family
-                //- .showOrhide
-                p#dispStuID(style='display:block;')
-                  label#stuID1.stuID(for='stuID', data-icon='u')  Your Driver License ID
-                  input#stuID(name='stuID', type='text', placeholder='Must exactly the same as printed on your license')
-                //- p#dispHostAdd(style='display:none;')
-                //-   label#hostAdd1.hostAdd(for='hostAdd', data-icon='a')  Your Address
-                //-   input#hostAdd(name='hostAdd', type='text', placeholder='1xx Elizabeth Ave')
+
+                p#driverID(style='display:block;')
+                  label#driverID(for='driverID', data-icon='u')  Your Driver License ID
+                  input#driverID(name='driverID', type='text', placeholder='Must exactly the same as printed on your license')
                 p
-                  label.uname(for='usernamesignup', data-icon='u') Your User Name
-                  input#usernamesignup(name='usernamesignup', required='required', type='text', placeholder='mysuperusername690')
+                  label.uname(for='username', data-icon='u') Your User Name
+                  input#username(name='username', required='required', type='text', placeholder='mysuperusername690')
                 p
                   label.youmail(for='emailsignup', data-icon='e')  Your Email
                   input#emailsignup(name='emailsignup', required='required', type='email', placeholder='mysupermail@mail.com')
                 p
-                  label.youpasswd(for='passwordsignup', data-icon='p') Your Password
-                  input#passwordsignup(name='passwordsignup', required='required', type='password', placeholder='Better use combinations of numbers, characters and symbols')
+                  label.uname(for='firstName', data-icon='u') Your First Name
+                  input#firstName(name='firstName', required='required', type='text', placeholder='Alan')
+                p
+                  label.uname(for='lastName', data-icon='u') Your Last Name
+                  input#lastName(name='lastName', required='required', type='text', placeholder='Smith')
+                p
+                  label.youpasswd(for='password', data-icon='p') Your Password
+                  input#password(name='password', required='required', type='password', placeholder='Better use combinations of numbers, characters and symbols')
                 p
                   label.youpasswd(for='passwordsignup_confirm', data-icon='p') Please Confirm Your Password
                   input#passwordsignup_confirm(name='passwordsignup_confirm', required='required', type='password', placeholder='The same as above')
