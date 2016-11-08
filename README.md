@@ -20,6 +20,8 @@ Master branch - use cases implementation
 
 > Add car to system by Admin
 
+> MongoDB database handling
+
 FrontEnd branch - Design for front-end views and implementation
 
 For testing system:
