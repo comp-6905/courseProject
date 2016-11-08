@@ -26,9 +26,9 @@ FrontEnd branch - Design for front-end views and implementation
 
 For testing system:
 
-> Administrator user: admin; password: 111111
+> Administrator is the user registered with name 'admin';
 
-> Customer user: test; password: 111111
+
 
 
 Prototype including:
