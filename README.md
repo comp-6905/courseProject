@@ -6,7 +6,7 @@ Group-3
 
 ## Current Progress:
 
-Master branch - back-end use cases implementation
+Master branch - use cases implementation
 
 > Customer Login module
 
@@ -20,9 +20,9 @@ Master branch - back-end use cases implementation
 
 > Add car to system by Admin
 
-FrontEnd branch - front-end implementation and design
+FrontEnd branch - Design for front-end views and implementation
 
-For testing system: 
+For testing system:
 
 > Administrator user: admin; password: 111111
 
