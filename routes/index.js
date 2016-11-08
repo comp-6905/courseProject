@@ -156,7 +156,7 @@ router.post('/addcar', function(req, res) {
             }
             else {
                 //Success !!!
-                res.redirect('adminhome');
+                res.redirect('/home');
                 // res.end("Event Registered!");
             }
         });
