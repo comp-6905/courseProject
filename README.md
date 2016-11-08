@@ -22,6 +22,11 @@ Master branch - back-end use cases implementation
 
 FrontEnd branch - front-end implementation and design
 
+For testing system: 
+
+> Administrator user: admin; password: 111111
+
+> Customer user: test; password: 111111
 
 
 Prototype including:
