@@ -126,7 +126,7 @@ router.post('/register', function(req, res, next) {
                 if (err) {
                     return next(err);
                 }
-                res.redirect('/helloworld');
+                res.redirect('/');
             });
         });
     });
