@@ -6,17 +6,16 @@ Group-3
 
 ## Current Progress:
 
-Customer Login module
+Master Branch - backend use cases implementation
 
-Admin Login module
+> Customer Login module
+> Admin Login module
+> Customer Register module
+> Car listing for Customer
+> Car listing for Admin
+> Add car to system by Admin
 
-Customer Register module
-
-Car listing for Customer
-
-Car listing for Admin
-
-Add car to system by Admin
+FrontEnd Branch - front-end design and pages
 
 
 
