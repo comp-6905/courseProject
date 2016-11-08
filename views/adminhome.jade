@@ -39,7 +39,7 @@ html.no-js(lang='en')
           | Car Management
           span
         nav.codrops-demos
-        form(action='/addcar', autocomplete='on', method='POST')
+        form(action='/addcar', autocomplete='on', method='POST', align='center')
           p#CarID(style='display:block;')
             label.CarID(for='CarID', data-icon='c') Please Input Car ID
             input#CarID(name='CarID', required='required', type='text', placeholder='201601001')
@@ -67,7 +67,7 @@ html.no-js(lang='en')
           
           button(type='submit') Add Car
           
-          table.table-fill
+          table(style='width:100%')
                       thead
                         tr 
                          
