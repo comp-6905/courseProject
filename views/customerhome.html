@@ -74,18 +74,18 @@
                             <!-- navigation menu -->
                             <a href="#" class="menu-toggle-close btn"><i class="fa fa-times"></i></a>
                             <ul class="nav sf-menu">
-                                <li><a href="index.html">Home</a></li>
-								
-                                <li><a href="available_cars.html">Vehicles</a></li>
+                                <li class="active"><a href="/home">Home</a></li>
+								<!-- <li><a href="">Hot Deals</a></li> -->
+                                <li><a href="">Reservations</a></li>
                                 <li><a href="">FAQS</a></li>
-								<li class="active"><a href="">User Login</a>
+								<!-- <li><a href="blog.html">User Login</a>
                                     <ul>
-                                        <li><a href=""> Customer Login </a></li>
+                                        <li><a href="login.html"> Customer Login </a></li>
                                         <li><a href="">Employee Login</a></li>
                                         <li><a href="">Administrator Login</a></li>
                                     </ul>
-                                </li>
-                                <li><a href="contactform.html">Contact</a></li>
+                                </li> -->
+                                <li><a href="/logout">Logout</a></li>
                                 <li>
                                     <ul class="social-icons">
                                         <li><a href="https://www.facebook.com/ok.samjackson" class="facebook"><i class="fa fa-facebook"></i></a></li>
@@ -129,208 +129,149 @@
 	<!-- PAGE -->
 	<!-- /CONTENT AREA -->
 	<div class="content-area">
-	<!-- BREADCRUMBS -->
-        <section class="page-section breadcrumbs text-center">
+		<!-- BREADCRUMBS -->
+        <section class="page-section breadcrumbs text-right">
             <div class="container">
                 <div class="page-header">
-                    <h1>Login</h1>
+                    <h1>Car Available</h1>
                 </div>
                 <ul class="breadcrumb">
                     <li><a href="index.html">Home</a></li>
 
-                    <li class="active">Login</li>
+                    <li class="active">List Car</li>
                 </ul>
             </div>
         </section>
-    <!-- /BREADCRUMBS -->
+        <!-- /BREADCRUMBS -->
 
-	<!-- PAGE -->
-	<section class="page-section color">
+		<!-- PAGE -->
+		<section class="page-section with-sidebar sub-page">
             <div class="container">
-                <div class="row">
-                    <div class="col-sm-6">
-                        <h3 class="block-title"><span>Login</span></h3>
-                        <form action="/" class="form-login" method ="post">
-                            <div class="row">
-                                <div class="col-md-12 hello-text-wrap">
-                                    <span class="hello-text text-thin">Hello, welcome to your account</span>
+                <div id="row1" class="row">
+                    <!-- CONTENT -->
+                    <div class="col-md-9 content car-listing" id="content">
+
+                        <!-- Car Listing -->
+
+                        <div id="content1" class="thumbnail no-border no-padding thumbnail-car-card clearfix">
+                            <div class="media">
+                                <a class="media-link" data-gal="prettyPhoto" href="assets/img/preview/cars/car-370x220x5.jpg">
+                                    <img src="assets/img/preview/cars/car-370x220x5.jpg" alt=""/>
+                                    <span class="icon-view"><strong><i class="fa fa-eye"></i></strong></span>
+                                </a>
+                            </div>
+                            <div class="caption">
+                                <div class="rating">
+                                    <span class="star"></span><!--
+                                            --><span class="star active"></span><!--
+                                            --><span class="star active"></span><!--
+                                            --><span class="star active"></span><!--
+                                            --><span class="star active"></span>
                                 </div>
-								                <!-- <div class="col-md-12 col-lg-6">
-                                    <a class="btn btn-theme btn-block btn-icon-left facebook" href="#"><i class="fa fa-facebook"></i>Sign in with Facebook</a>
-                                </div> -->
-                                <!--<div class="col-md-12 col-lg-6">
-                                    <a class="btn btn-theme btn-block btn-icon-left facebook" href="#"><i class="fa fa-facebook"></i>Sign in with Facebook</a>
-                                </div>-->
-                                <!--<div class="col-md-12 col-lg-6">
-                                    <a class="btn btn-theme btn-block btn-icon-left twitter" href="#"><i class="fa fa-twitter"></i>Sign in with Twitter</a>
-                                </div>-->
-                                <div class="col-md-12">
-                                    <div class="form-group"><input class="form-control" type="text" placeholder="User name or email" name="username" /></div>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="form-group"><input class="form-control" type="password" placeholder="Your password" name="password" /></div>
-                                </div>
-                                <div class="col-md-12 col-lg-6">
-                                    <div class="checkbox">
-                                        <label><input type="checkbox"> Remember me</label>
+                                <h4 class="caption-title"><a href="#">VW POLO TRENDLINE 2.0 TDI</a></h4>
+                                <h5 class="caption-title-sub">Start from 39$/per a day</h5>
+                                <div class="caption-text">Vivamus eget nibh. Etiam cursus leo vel metus. Nulla facilisi. Aenean nec eros. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia.</div>
+                                <table class="table">
+                                    <tr>
+                                        <td><i class="fa fa-car"></i> 2013</td>
+                                        <td><i class="fa fa-dashboard"></i> Diesel</td>
+                                        <td><i class="fa fa-cog"></i> Auto</td>
+                                        <td><i class="fa fa-road"></i> 25000</td>
+                                        <td class="buttons"><a class="btn btn-theme" href="#">Rent It</a></td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+
+
+
+                        <!-- /Car Listing -->
+
+                        <!-- Pagination -->
+                        <!-- <div class="pagination-wrapper">
+                            <ul class="pagination">
+                                <li class="disabled"><a href="#"><i class="fa fa-angle-double-left"></i> Previous</a></li>
+                                <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
+                                <li><a href="#">2</a></li>
+                                <li><a href="#">3</a></li>
+                                <li><a href="#">4</a></li>
+                                <li><a href="#">Next <i class="fa fa-angle-double-right"></i></a></li>
+                            </ul>
+                        </div> -->
+                        <!-- /Pagination -->
+
+                    </div>
+                    <!-- /CONTENT -->
+
+                    <!-- SIDEBAR -->
+                    <aside class="col-md-3 sidebar" id="sidebar">
+                        <!-- widget -->
+
+                        <!-- /widget -->
+                        <!-- widget price filter -->
+
+                        <!-- /widget price filter -->
+                        <!-- widget testimonials -->
+                        <div class="widget shadow">
+                            <div class="widget-title">Testimonials</div>
+                            <div class="testimonials-carousel">
+                                <div class="owl-carousel" id="testimonials">
+                                    <div class="testimonial">
+                                        <div class="media">
+                                            <div class="media-body">
+                                                <div class="testimonial-text">Vivamus eget nibh. Etiam cursus leo vel metus. Nulla facilisi. Aenean nec eros. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia.</div>
+                                                <div class="testimonial-name">John Doe <span class="testimonial-position">Co- founder at Rent It</span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="testimonial">
+                                        <div class="media">
+                                            <div class="media-body">
+                                                <div class="testimonial-text">Vivamus eget nibh. Etiam cursus leo vel metus. Nulla facilisi. Aenean nec eros. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia.</div>
+                                                <div class="testimonial-name">John Doe <span class="testimonial-position">Co- founder at Rent It</span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="testimonial">
+                                        <div class="media">
+                                            <div class="media-body">
+                                                <div class="testimonial-text">Vivamus eget nibh. Etiam cursus leo vel metus. Nulla facilisi. Aenean nec eros. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia.</div>
+                                                <div class="testimonial-name">John Doe <span class="testimonial-position">Co- founder at Rent It</span></div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="col-md-12 col-lg-6 text-right-lg">
-                                    <a class="forgot-password" href="#">forgot password?</a>
+                            </div>
+                        </div>
+                        <!-- /widget testimonials -->
+                        <!-- widget helping center -->
+                        <div class="widget shadow widget-helping-center">
+                            <h4 class="widget-title">Helping Center</h4>
+                            <div class="widget-content">
+                                <p>Vivamus eget nibh. Etiam cursus leo vel metus. Nulla facilisi. Aenean nec eros.</p>
+                                <h5 class="widget-title-sub">+90 555 444 66 33</h5>
+                                <p><a href="mailto:support@supportcenter.com">support@supportcenter.com</a></p>
+                                <div class="button">
+                                    <a href="#" class="btn btn-block btn-theme btn-theme-dark">Support Center</a>
                                 </div>
+                            </div>
+                        </div>
+                        <!-- /widget helping center -->
+                    </aside>
+                    <!-- /SIDEBAR -->
 
-                                <div class="col-md-6">
-                                    <input type= "submit" class="btn btn-theme btn-block btn-theme-dark" value="Login" />
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="col-sm-6">
-                        <h3 class="block-title"><span>Create New Account</span></h3>
-                        <form action="#" class="create-account">
-                            <div class="row">
-                                <div class="col-md-12 hello-text-wrap">
-                                    <span class="hello-text text-thin">Create Your Account</span>
-                                </div>
-                                <div class="col-md-12">
-                                    <h3 class="block-title">Signup Today and You'll be able to</h3>
-                                    <ul class="list-check">
-                                        <li>Online Order Status</li>
-                                        <li>See Ready Hot Deals</li>
-                                        <li>Love List</li>
-                                        <li>Sign up to receive exclusive news and private sales</li>
-                                        <li>Quick Buy Stuffs</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </form>
-                        <form action="/register" class="form-login" method ="post">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="form-group"><input class="form-control" type="text" placeholder="Your Driver ID" name="driverID" /></div>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="form-group"><input class="form-control" type="text" placeholder="Your username" name="username" /></div>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="form-group"><input class="form-control" type="text" placeholder="Your email address" name="emailsignup" /></div>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="form-group"><input class="form-control" type="text" placeholder="Your First Name" name="firstName" /></div>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="form-group"><input class="form-control" type="text" placeholder="Your Last Name" name="lastName" /></div>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="form-group"><input class="form-control" type="password" placeholder="Your password" name="password" /></div>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="form-group"><input class="form-control" type="password" placeholder="Your password" name="passwordsignup_confirm" /></div>
-                                </div>
-                                <div class="col-md-6">
-                                    <input type= "submit" class="btn btn-theme btn-block btn-theme-dark" value="Register">
-                                </div>
-                            </div>
-                        </form>
-                    </div>
                 </div>
             </div>
         </section>
-	<!-- PAGE -->
+        <!-- /PAGE WITH SIDEBAR -->
 
-	<!-- PAGE -->
-		<section class="page-section">
-				<div class="container">
 
-					<h2 class="section-title wow fadeInDown" data-wow-offset="200" data-wow-delay="100ms">
-						<small>Do You Have Any Question or Anything else </small>
-						<span>Costumer service</span>
-					</h2>
+			<!-- PAGE -->
 
-					<!-- Team row -->
-					<div class="row">
-
-						<!-- Team 1 -->
-						<div class="col-md-3 col-sm-6 wow fadeInDown" data-wow-offset="200" data-wow-delay="100ms">
-							<div class="thumbnail thumbnail-team no-border no-padding">
-								<div class="media">
-									<img src="assets/img/preview/team/team-270x270x1.jpg" alt=""/>
-								</div>
-								<div class="caption">
-									<h4 class="caption-title">Samuel Owusu <small>Costumer Service</small></h4>
-									<ul class="team-details">
-										<li>Skype: oksamjackson</li>
-										<li>Tel: 780 266-7090</li>
-										<li><a href="">supportname@gmail.com</a></li>
-									</ul>
-								</div>
-							</div>
-						</div>
-						<!-- /Team 1 -->
-
-						<!-- Team 2 -->
-						<div class="col-md-3 col-sm-6 wow fadeInDown" data-wow-offset="200" data-wow-delay="200ms">
-							<div class="thumbnail thumbnail-team no-border no-padding">
-								<div class="media">
-									<img src="assets/img/preview/team/team-270x270x2.jpg" alt=""/>
-								</div>
-								<div class="caption">
-									<h4 class="caption-title">Huizhong Liu <small>Team Title</small></h4>
-									<ul class="team-details">
-										<li>Skype: team.member</li>
-										<li>Tel: 555 555-5555</li>
-										<li><a href="mailto:supportname@gmail.com">supportname@gmail.com</a></li>
-									</ul>
-								</div>
-							</div>
-						</div>
-						<!-- /Team 2 -->
-
-						<!-- Team 3 -->
-						<div class="col-md-3 col-sm-6 wow fadeInDown" data-wow-offset="200" data-wow-delay="300ms">
-							<div class="thumbnail thumbnail-team no-border no-padding">
-								<div class="media">
-									<img src="assets/img/preview/team/team-270x270x3.jpg" alt=""/>
-								</div>
-								<div class="caption">
-									<h4 class="caption-title">Jia Luo <small>Tech-Support</small></h4>
-									<ul class="team-details">
-										<li>Skype: team.member</li>
-										<li>Tel: 555 555-5555</li>
-										<li><a href="mailto:supportname@gmail.com">supportname@gmail.com</a></li>
-									</ul>
-								</div>
-							</div>
-						</div>
-						<!-- /Team 3 -->
-
-						<!-- Team 4 -->
-						<div class="col-md-3 col-sm-6 wow fadeInDown" data-wow-offset="200" data-wow-delay="400ms">
-							<div class="thumbnail thumbnail-team no-border no-padding">
-								<div class="media">
-									<img src="assets/img/preview/team/team-270x270x4.jpg" alt=""/>
-								</div>
-								<div class="caption">
-									<h4 class="caption-title">Mark Osaboro <small>Costumer Service</small></h4>
-									<ul class="team-details">
-										<li>Skype: team.member</li>
-										<li>Tel: 555 555-5555</li>
-										<li><a href="mailto:supportname@gmail.com">supportname@gmail.com</a></li>
-									</ul>
-								</div>
-							</div>
-						</div>
-						<!-- Team 4 -->
-
-					</div>
-					<!-- /Team row -->
-
-				</div>
-			</section>
 			<!-- /PAGE -->
 
 			<!-- PAGE -->
-			<section class="page-section contact dark">
+			<!-- <section class="page-section contact dark">
 				<div class="container">
 
 					<!-- Get in touch -->
@@ -398,7 +339,7 @@
 
 								<div class="outer required">
 									<div class="form-group af-inner">
-										<input type="submit" name="submit" class="form-button form-button-submit btn btn-block btn-theme ripple-effect btn-theme-dark" id="submit_btn" value="Send message" />
+										<input type="submit" name="submit" class="form-button form-button-submit btn btn-block btn-theme" id="submit_btn" value="Send message" />
 									</div>
 								</div>
 
@@ -442,7 +383,7 @@
 					<!-- /Get in touch -->
 
 				</div>
-			</section>
+			</section> -->
 			<!-- /PAGE -->
 
 		</div>
@@ -497,6 +438,19 @@
 <script src="assets/js/theme-ajax-mail.js"></script>
 <script src="assets/js/theme.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false"></script>
+
+<script>
+var test = "11112222"
+
+for(car in cars){
+  var span = '<div class="thumbnail no-border no-padding thumbnail-car-card clearfix"><div class="media"><a class="media-link" data-gal="prettyPhoto" href="assets/img/preview/cars/car-370x220x5.jpg"><img src="assets/img/preview/cars/car-370x220x5.jpg" alt=""/><span class="icon-view"><strong><i class="fa fa-eye"></i></strong></span></a></div><div class="caption"><div class="rating"><span class="star"></span><!----><span class="star active"></span><!----><span class="star active"></span><!----><span class="star active"></span><!----><span class="star active"></span></div><h4 class="caption-title"><a href="#">'+test+'</a></h4><h5 class="caption-title-sub">Start from 39$/per a day</h5><div class="caption-text">Vivamus eget nibh. Etiam cursus leo vel metus. Nulla facilisi. Aenean nec eros. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia.</div><table class="table"><tr><td><i class="fa fa-car"></i> 2013</td><td><i class="fa fa-dashboard"></i> Diesel</td><td><i class="fa fa-cog"></i> Auto</td><td><i class="fa fa-road"></i> 25000</td><td class="buttons"><a class="btn btn-theme" href="#">Rent It</a></td></tr></table></div></div>';
+
+  $(".content").append(span);
+}
+
+
+
+</script>
 
 </body>
 </html>

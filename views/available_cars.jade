@@ -1,0 +1,442 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    //if IE
+      meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    title  MCar Share 
+    // Favicon
+    link(rel='apple-touch-icon-precomposed', sizes='144x144', href='assets/ico/apple-touch-icon-144-precomposed.png')
+    link(rel='shortcut icon', href='images/logo1.png')
+    // CSS Global
+    link(href='assets/plugins/bootstrap/css/bootstrap.min.css', rel='stylesheet')
+    link(href='assets/plugins/bootstrap-select/css/bootstrap-select.min.css', rel='stylesheet')
+    link(href='assets/plugins/fontawesome/css/font-awesome.min.css', rel='stylesheet')
+    link(href='assets/plugins/prettyphoto/css/prettyPhoto.css', rel='stylesheet')
+    link(href='assets/plugins/owl-carousel2/assets/owl.carousel.min.css', rel='stylesheet')
+    link(href='assets/plugins/owl-carousel2/assets/owl.theme.default.min.css', rel='stylesheet')
+    link(href='assets/plugins/animate/animate.min.css', rel='stylesheet')
+    link(href='assets/plugins/swiper/css/swiper.min.css', rel='stylesheet')
+    link(href='assets/plugins/datetimepicker/css/bootstrap-datetimepicker.min.css', rel='stylesheet')
+    // Theme CSS
+    link(href='assets/css/theme.css', rel='stylesheet')
+    // Head Libs
+    script(src='assets/plugins/modernizr.custom.js')
+    //if lt IE 9
+      script(src='assets/plugins/iesupport/html5shiv.js')
+      script(src='assets/plugins/iesupport/respond.min.js')
+  body#home.wide
+    // PRELOADER
+    #preloader
+      #preloader-status
+        .spinner
+          .rect1
+          .rect2
+          .rect3
+          .rect4
+          .rect5
+        #preloader-title Loading
+    // /PRELOADER
+    // WRAPPER
+    .wrapper
+      // HEADER
+      header.header.fixed
+        .header-wrapper
+          .container
+            // Logo
+            .logo
+              a(href='index.html')
+                img(src='images/logo1.png', alt='MCar Share')
+            // /Logo
+            // Mobile menu toggle button
+            a.menu-toggle.btn.ripple-effect.btn-theme-transparent(href='#')
+              i.fa.fa-bars
+            // /Mobile menu toggle button
+            // Navigation
+            nav.navigation.closed.clearfix
+              .swiper-wrapper
+                .swiper-slide
+                  // navigation menu
+                  a.menu-toggle-close.btn(href='#')
+                    i.fa.fa-times
+                  ul.nav.sf-menu
+                    li
+                      a(href='index.html') Home
+                    li
+                      a(href='') Hot Deals
+                    li.active
+                      a(href='') Vehicles
+                    li
+                      a(href='') FAQS
+                    li
+                      a(href='login.html') User Login
+                      ul
+                        li
+                          a(href='login.html')  Customer Login 
+                        li
+                          a(href='') Employee Login
+                        li
+                          a(href='') Administrator Login
+                    li
+                      a(href='') Contact
+                    li
+                      ul.social-icons
+                        li
+                          a.facebook(href='https://www.facebook.com/ok.samjackson')
+                            i.fa.fa-facebook
+                        li
+                          a.twitter(href='#')
+                            i.fa.fa-twitter
+                        li
+                          a.instagram(href='#')
+                            i.fa.fa-instagram
+                        li
+                          a.pinterest(href='#')
+                            i.fa.fa-pinterest
+                  // /navigation menu
+              // Add Scroll Bar
+              .swiper-scrollbar
+            // /Navigation
+      // /HEADER
+      // PAGE
+      // /CONTENT AREA
+      .content-area
+        // BREADCRUMBS
+        section.page-section.breadcrumbs.text-right
+          .container
+            .page-header
+              h1 Car Available
+            ul.breadcrumb
+              li
+                a(href='index.html') Home
+              li.active List Car
+        // /BREADCRUMBS
+        // PAGE
+        section.page-section.with-sidebar.sub-page
+          .container
+            #row1.row
+              // CONTENT
+              //- #content.col-md-9.content.car-listing
+              //-   // Car Listing
+              //-   #content1.thumbnail.no-border.no-padding.thumbnail-car-card.clearfix
+              //-     .media
+              //-       a.media-link(data-gal='prettyPhoto', href='assets/img/preview/cars/car-370x220x5.jpg')
+              //-         img(src='assets/img/preview/cars/car-370x220x5.jpg', alt='')
+              //-         span.icon-view
+              //-           strong
+              //-             i.fa.fa-eye
+              //-     .caption
+              //-       .rating
+              //-         span.star
+              //-         //
+              //-         span.star.active
+              //-         //
+              //-         span.star.active
+              //-         //
+              //-         span.star.active
+              //-         //
+              //-         span.star.active
+              //-       h4.caption-title
+              //-         a(href='#') VW POLO TRENDLINE 2.0 TDI
+              //-       h5.caption-title-sub Start from 39$/per a day
+              //-       .caption-text
+              //-         | Vivamus eget nibh. Etiam cursus leo vel metus. Nulla facilisi. Aenean nec eros. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia.
+              //-       table.table
+              //-         tr
+              //-           td
+              //-             i.fa.fa-car
+              //-             |  2013
+              //-           td
+              //-             i.fa.fa-dashboard
+              //-             |  Diesel
+              //-           td
+              //-             i.fa.fa-cog
+              //-             |  Auto
+              //-           td
+              //-             i.fa.fa-road
+              //-             |  25000
+              //-           td.buttons
+              //-             a.btn.btn-theme(href='#') Rent It
+                // /Car Listing
+                // Pagination
+                //
+                  <div class="pagination-wrapper">
+                  <ul class="pagination">
+                  <li class="disabled"><a href="#"><i class="fa fa-angle-double-left"></i> Previous</a></li>
+                  <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
+                  <li><a href="#">2</a></li>
+                  <li><a href="#">3</a></li>
+                  <li><a href="#">4</a></li>
+                  <li><a href="#">Next <i class="fa fa-angle-double-right"></i></a></li>
+                  </ul>
+                  </div>
+                // /Pagination
+              // /CONTENT
+              each car, i in cars
+                  #content.col-md-9.content.car-listing
+                    // Car Listing
+                    #content1.thumbnail.no-border.no-padding.thumbnail-car-card.clearfix
+                      .media
+                        a.media-link(data-gal='prettyPhoto', href='assets/img/preview/cars/car-370x220x5.jpg')
+                          img(src='assets/img/preview/cars/car-370x220x5.jpg', alt='')
+                          span.icon-view
+                            strong
+                              i.fa.fa-eye
+                      .caption
+                        .rating
+                          span.star
+                          //
+                          span.star.active
+                          //
+                          span.star.active
+                          //
+                          span.star.active
+                          //
+                          span.star.active
+                        h4.caption-title
+                          a(href='#') #{car.brand}
+                        h5.caption-title-sub Start from #{car.price}$/per a day
+                        .caption-text
+                          | #{car.color}
+                        table.table
+                          tr
+                            td
+                              i.fa.fa-car
+                              |  #{car._id}
+                            td
+                              i.fa.fa-dashboard
+                              |  #{car.classType}
+                            td
+                              i.fa.fa-cog
+                              |  #{car.license}
+                            td
+                              i.fa.fa-road
+                              |  #{car.parkLocation}
+                            td.buttons
+                              a.btn.btn-theme(href='/login.html') Login to Rent!        
+              // SIDEBAR
+              aside#sidebar.col-md-3.sidebar
+                // widget
+                .widget.shadow.widget-find-car
+                  h4.widget-title Find Best Rental Car
+                  .widget-content
+                    // Search form
+                    .form-search.light
+                      form(action='#')
+                        .form-group.has-icon.has-label
+                          label(for='formSearchUpLocation3') Picking Up Location
+                          input#formSearchUpLocation3.form-control(type='text', placeholder='Airport or Anywhere')
+                          span.form-control-icon
+                            i.fa.fa-map-marker
+                        .form-group.has-icon.has-label
+                          label(for='formSearchOffLocation3') Dropping Off Location
+                          input#formSearchOffLocation3.form-control(type='text', placeholder='Airport or Anywhere')
+                          span.form-control-icon
+                            i.fa.fa-map-marker
+                        .form-group.has-icon.has-label
+                          label(for='formSearchUpDate3') Picking Up Date
+                          input#formSearchUpDate3.form-control(type='text', placeholder='dd/mm/yyyy')
+                          span.form-control-icon
+                            i.fa.fa-calendar
+                        .form-group.has-icon.has-label.selectpicker-wrapper
+                          label Picking Up Hour
+                          select.selectpicker.input-price(data-live-search='true', data-width='100%', data-toggle='tooltip', title='Select')
+                            option 20:00 AM
+                            option 21:00 AM
+                            option 22:00 AM
+                          span.form-control-icon
+                            i.fa.fa-clock-o
+                        .form-group.selectpicker-wrapper
+                          label Select Category
+                          select.selectpicker.input-price(data-live-search='true', data-width='100%', data-toggle='tooltip', title='Select')
+                            option Select Category
+                            option Select Category
+                            option Select Category
+                        .form-group.selectpicker-wrapper
+                          label Select Type
+                          select.selectpicker.input-price(data-live-search='true', data-width='100%', data-toggle='tooltip', title='Select')
+                            option Select Type
+                            option Select Type
+                            option Select Type
+                        button#formSearchSubmit3.btn.btn-submit.btn-theme.btn-theme-dark.btn-block(type='submit') Find Car
+                    // /Search form
+                // /widget
+                // widget price filter
+                .widget.shadow.widget-filter-price
+                  h4.widget-title Price
+                  .widget-content
+                    #slider-range
+                    input#amount(type='text', readonly='')
+                    button.btn.btn-theme.btn-theme-dark Filter
+                // /widget price filter
+                // widget testimonials
+                .widget.shadow
+                  .widget-title Testimonials
+                  .testimonials-carousel
+                    #testimonials.owl-carousel
+                      .testimonial
+                        .media
+                          .media-body
+                            .testimonial-text
+                              | Vivamus eget nibh. Etiam cursus leo vel metus. Nulla facilisi. Aenean nec eros. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia.
+                            .testimonial-name
+                              | John Doe 
+                              span.testimonial-position Co- founder at Rent It
+                      .testimonial
+                        .media
+                          .media-body
+                            .testimonial-text
+                              | Vivamus eget nibh. Etiam cursus leo vel metus. Nulla facilisi. Aenean nec eros. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia.
+                            .testimonial-name
+                              | John Doe 
+                              span.testimonial-position Co- founder at Rent It
+                      .testimonial
+                        .media
+                          .media-body
+                            .testimonial-text
+                              | Vivamus eget nibh. Etiam cursus leo vel metus. Nulla facilisi. Aenean nec eros. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia.
+                            .testimonial-name
+                              | John Doe 
+                              span.testimonial-position Co- founder at Rent It
+                // /widget testimonials
+                // widget helping center
+                .widget.shadow.widget-helping-center
+                  h4.widget-title Helping Center
+                  .widget-content
+                    p Vivamus eget nibh. Etiam cursus leo vel metus. Nulla facilisi. Aenean nec eros.
+                    h5.widget-title-sub +90 555 444 66 33
+                    p
+                      a(href='mailto:support@supportcenter.com') support@supportcenter.com
+                    .button
+                      a.btn.btn-block.btn-theme.btn-theme-dark(href='#') Support Center
+                // /widget helping center
+              // /SIDEBAR
+        // /PAGE WITH SIDEBAR
+        // PAGE
+        // /PAGE
+        // PAGE
+        //
+          <section class="page-section contact dark">
+          <div class="container">
+          <!-- Get in touch
+        h2.section-title.wow.fadeInDown(data-wow-offset='200', data-wow-delay='100ms')
+          small Feel Free to Say Hello!
+          span Get in Touch With Us
+        .row
+          .col-md-6.wow.fadeInLeft(data-wow-offset='200', data-wow-delay='200ms')
+            // Contact form
+            form#contact-form.contact-form(name='contact-form', method='post', action='#')
+              .row
+                .col-md-6
+                  .outer.required
+                    .form-group.af-inner.has-icon
+                      label.sr-only(for='name') Name
+                      input#name.form-control.placeholder(type='text', name='name', placeholder='Name', value='', size='30', data-toggle='tooltip', title='Name is required')
+                      span.form-control-icon
+                        i.fa.fa-user
+                .col-md-6
+                  .outer.required
+                    .form-group.af-inner.has-icon
+                      label.sr-only(for='email') Email
+                      input#email.form-control.placeholder(type='text', name='email', placeholder='Email', value='', size='30', data-toggle='tooltip', title='Email is required')
+                      span.form-control-icon
+                        i.fa.fa-envelope
+              .outer.required
+                .form-group.af-inner.has-icon
+                  label.sr-only(for='subject') Subject
+                  input#subject.form-control.placeholder(type='text', name='subject', placeholder='Subject', value='', size='30', data-toggle='tooltip', title='Subject is required')
+                  span.form-control-icon
+                    i.fa.fa-bars
+              .form-group.af-inner.has-icon
+                label.sr-only(for='input-message') Message
+                textarea#input-message.form-control.placeholder(name='message', placeholder='Message', rows='4', cols='50', data-toggle='tooltip', title='Message is required')
+                span.form-control-icon
+                  i.fa.fa-bars
+              .outer.required
+                .form-group.af-inner
+                  input#submit_btn.form-button.form-button-submit.btn.btn-block.btn-theme(type='submit', name='submit', value='Send message')
+            // /Contact form
+          .col-md-6.wow.fadeInRight(data-wow-offset='200', data-wow-delay='200ms')
+            p
+              | This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum.
+            ul.media-list.contact-list
+              li.media
+                .media-left
+                  i.fa.fa-home
+                .media-body Adress: Memorial University of Newfoundland
+              li.media
+                .media-left
+                  i.fa.fa
+                .media-body St. John's, NL.
+              li.media
+                .media-left
+                  i.fa.fa-phone
+                .media-body Support Phone: +1 780-266-7090
+              li.media
+                .media-left
+                  i.fa.fa-envelope
+                .media-body E mails: sko336@mun.ca
+              li.media
+                .media-left
+                  i.fa.fa-clock-o
+                .media-body Working Hours: 09:30-21:00 except on Sundays
+              li.media
+                .media-left
+                  i.fa.fa-map-marker
+                .media-body View on The Map
+        // /Get in touch
+      | 			 -->
+      // /PAGE
+    // /CONTENT AREA
+    footer.footer
+      .footer-meta
+        .container
+          .row
+            .col-sm-12
+              p.btn-row.text-center
+                a.btn.btn-theme.ripple-effect.btn-icon-left.facebook.wow.fadeInDown(href='https://www.facebook.com/ok.samjackson', data-wow-offset='20', data-wow-delay='100ms')
+                  i.fa.fa-facebook
+                  | FACEBOOK
+                a.btn.btn-theme.btn-icon-left.ripple-effect.twitter.wow.fadeInDown(href='#', data-wow-offset='20', data-wow-delay='200ms')
+                  i.fa.fa-twitter
+                  | TWITTER
+                a.btn.btn-theme.btn-icon-left.ripple-effect.pinterest.wow.fadeInDown(href='#', data-wow-offset='20', data-wow-delay='300ms')
+                  i.fa.fa-pinterest
+                  | PINTEREST
+                a.btn.btn-theme.btn-icon-left.ripple-effect.google.wow.fadeInDown(href='#', data-wow-offset='20', data-wow-delay='400ms')
+                  i.fa.fa-google
+                  | GOOGLE
+              .copyright © 2016 MCar Share — 
+    // /FOOTER
+    #to-top.to-top
+      i.fa.fa-angle-up
+    // /WRAPPER
+    // JS Global
+    script(src='assets/plugins/jquery/jquery-1.11.1.min.js')
+    script(src='assets/plugins/bootstrap/js/bootstrap.min.js')
+    script(src='assets/plugins/bootstrap-select/js/bootstrap-select.min.js')
+    script(src='assets/plugins/superfish/js/superfish.min.js')
+    script(src='assets/plugins/prettyphoto/js/jquery.prettyPhoto.js')
+    script(src='assets/plugins/owl-carousel2/owl.carousel.min.js')
+    script(src='assets/plugins/jquery.sticky.min.js')
+    script(src='assets/plugins/jquery.easing.min.js')
+    script(src='assets/plugins/jquery.smoothscroll.min.js')
+    // <script src="assets/plugins/smooth-scrollbar.min.js"></script>
+    // <script src="assets/plugins/wow/wow.min.js"></script>
+    script.
+      // WOW - animated content
+      //new WOW().init();
+    script(src='assets/plugins/swiper/js/swiper.jquery.min.js')
+    script(src='assets/plugins/datetimepicker/js/moment-with-locales.min.js')
+    script(src='assets/plugins/datetimepicker/js/bootstrap-datetimepicker.min.js')
+    // JS Page Level
+    script(src='assets/js/theme-ajax-mail.js')
+    script(src='assets/js/theme.js')
+    script(src='https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false')
+    //- script.
+    //-   var test = "11112222"
+    //-   var span = '<div class="thumbnail no-border no-padding thumbnail-car-card clearfix"><div class="media"><a class="media-link" data-gal="prettyPhoto" href="assets/img/preview/cars/car-370x220x5.jpg"><img src="assets/img/preview/cars/car-370x220x5.jpg" alt=""/><span class="icon-view"><strong><i class="fa fa-eye"></i></strong></span></a></div><div class="caption"><div class="rating"><span class="star"></span><!----><span class="star active"></span><!----><span class="star active"></span><!----><span class="star active"></span><!----><span class="star active"></span></div><h4 class="caption-title"><a href="#">'+test+'</a></h4><h5 class="caption-title-sub">Start from 39$/per a day</h5><div class="caption-text">Vivamus eget nibh. Etiam cursus leo vel metus. Nulla facilisi. Aenean nec eros. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia.</div><table class="table"><tr><td><i class="fa fa-car"></i> 2013</td><td><i class="fa fa-dashboard"></i> Diesel</td><td><i class="fa fa-cog"></i> Auto</td><td><i class="fa fa-road"></i> 25000</td><td class="buttons"><a class="btn btn-theme" href="#">Rent It</a></td></tr></table></div></div>';
+    //-   for(i=0;i<5;i++){
+    //-   $(".content").append(span);
+    //-   }

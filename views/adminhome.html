@@ -75,7 +75,7 @@
                             <a href="#" class="menu-toggle-close btn"><i class="fa fa-times"></i></a>
                             <ul class="nav sf-menu">
                                 <li><a href="index.html">Home</a></li>
-								
+								<li><a href="">Hot Deals</a></li>
                                 <li><a href="available_cars.html">Vehicles</a></li>
                                 <li><a href="">FAQS</a></li>
 								<li class="active"><a href="">User Login</a>
@@ -85,7 +85,7 @@
                                         <li><a href="">Administrator Login</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="contactform.html">Contact</a></li>
+                                <li><a href="/logout">Logout</a></li>
                                 <li>
                                     <ul class="social-icons">
                                         <li><a href="https://www.facebook.com/ok.samjackson" class="facebook"><i class="fa fa-facebook"></i></a></li>
@@ -150,40 +150,18 @@
                 <div class="row">
                     <div class="col-sm-6">
                         <h3 class="block-title"><span>Login</span></h3>
-                        <form action="/" class="form-login" method ="post">
-                            <div class="row">
-                                <div class="col-md-12 hello-text-wrap">
-                                    <span class="hello-text text-thin">Hello, welcome to your account</span>
-                                </div>
-								                <!-- <div class="col-md-12 col-lg-6">
-                                    <a class="btn btn-theme btn-block btn-icon-left facebook" href="#"><i class="fa fa-facebook"></i>Sign in with Facebook</a>
-                                </div> -->
-                                <!--<div class="col-md-12 col-lg-6">
-                                    <a class="btn btn-theme btn-block btn-icon-left facebook" href="#"><i class="fa fa-facebook"></i>Sign in with Facebook</a>
-                                </div>-->
-                                <!--<div class="col-md-12 col-lg-6">
-                                    <a class="btn btn-theme btn-block btn-icon-left twitter" href="#"><i class="fa fa-twitter"></i>Sign in with Twitter</a>
-                                </div>-->
-                                <div class="col-md-12">
-                                    <div class="form-group"><input class="form-control" type="text" placeholder="User name or email" name="username" /></div>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="form-group"><input class="form-control" type="password" placeholder="Your password" name="password" /></div>
-                                </div>
-                                <div class="col-md-12 col-lg-6">
-                                    <div class="checkbox">
-                                        <label><input type="checkbox"> Remember me</label>
-                                    </div>
-                                </div>
-                                <div class="col-md-12 col-lg-6 text-right-lg">
-                                    <a class="forgot-password" href="#">forgot password?</a>
-                                </div>
-
-                                <div class="col-md-6">
-                                    <input type= "submit" class="btn btn-theme btn-block btn-theme-dark" value="Login" />
-                                </div>
-                            </div>
-                        </form>
+                        <table id="myTable" style="width:100%">
+                          <tr style="font-weight:bold">
+                            <td>CarID</td>
+                            <td>Brand</td>
+                            <td>Class</td>
+                            <td>Price</td>
+                            <td>Location</td>
+                            <td>License</td>
+                            <td>Color</td>
+                            <td>Customer</td>
+                          </tr>
+                        </table>
                     </div>
                     <div class="col-sm-6">
                         <h3 class="block-title"><span>Create New Account</span></h3>
@@ -192,43 +170,36 @@
                                 <div class="col-md-12 hello-text-wrap">
                                     <span class="hello-text text-thin">Create Your Account</span>
                                 </div>
-                                <div class="col-md-12">
-                                    <h3 class="block-title">Signup Today and You'll be able to</h3>
-                                    <ul class="list-check">
-                                        <li>Online Order Status</li>
-                                        <li>See Ready Hot Deals</li>
-                                        <li>Love List</li>
-                                        <li>Sign up to receive exclusive news and private sales</li>
-                                        <li>Quick Buy Stuffs</li>
-                                    </ul>
-                                </div>
                             </div>
                         </form>
-                        <form action="/register" class="form-login" method ="post">
+                        <form action="/addcar" class="form-login" method ="post">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <div class="form-group"><input class="form-control" type="text" placeholder="Your Driver ID" name="driverID" /></div>
+                                    <div class="form-group"><input class="form-control" type="text" placeholder="Please Input Car ID:201601001" name="CarID" /></div>
                                 </div>
                                 <div class="col-md-12">
-                                    <div class="form-group"><input class="form-control" type="text" placeholder="Your username" name="username" /></div>
+                                    <div class="form-group"><input class="form-control" type="text" placeholder="Please Input Car Brand:Ford" name="Brand" /></div>
                                 </div>
                                 <div class="col-md-12">
-                                    <div class="form-group"><input class="form-control" type="text" placeholder="Your email address" name="emailsignup" /></div>
+                                    <div class="form-group"><input class="form-control" type="text" placeholder="Please Input Car Class: A,B,C" name="Class" /></div>
                                 </div>
                                 <div class="col-md-12">
-                                    <div class="form-group"><input class="form-control" type="text" placeholder="Your First Name" name="firstName" /></div>
+                                    <div class="form-group"><input class="form-control" type="text" placeholder="Please Input Rent Price: 20" name="Price" /></div>
                                 </div>
                                 <div class="col-md-12">
-                                    <div class="form-group"><input class="form-control" type="text" placeholder="Your Last Name" name="lastName" /></div>
+                                    <div class="form-group"><input class="form-control" type="text" placeholder="Please Input Location of Car" name="Location" /></div>
                                 </div>
                                 <div class="col-md-12">
-                                    <div class="form-group"><input class="form-control" type="password" placeholder="Your password" name="password" /></div>
+                                    <div class="form-group"><input class="form-control" type="text" placeholder="Please Input License of Car" name="License" /></div>
                                 </div>
                                 <div class="col-md-12">
-                                    <div class="form-group"><input class="form-control" type="password" placeholder="Your password" name="passwordsignup_confirm" /></div>
+                                    <div class="form-group"><input class="form-control" type="text" placeholder="Description of Car" name="Color" /></div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group"><input class="form-control" type="hidden" name="Customer" /></div>
                                 </div>
                                 <div class="col-md-6">
-                                    <input type= "submit" class="btn btn-theme btn-block btn-theme-dark" value="Register">
+                                    <input type= "submit" class="btn btn-theme btn-block btn-theme-dark" value="Add">
                                 </div>
                             </div>
                         </form>
@@ -497,6 +468,23 @@
 <script src="assets/js/theme-ajax-mail.js"></script>
 <script src="assets/js/theme.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false"></script>
+
+<script>
+
+    for(1 in 5){
+      var table = document.getElementById("myTable");
+      var row = table.insertRow(-1);
+      var cell0 = row.insertCell(0);
+      var cell1 = row.insertCell(1);
+      var cell2 = row.insertCell(2);
+      var cell3 = row.insertCell(3);
+      cell0.innerHTML = cars;
+      cell1.innerHTML = "11";
+      cell2.innerHTML = "111";
+      cell3.innerHTML = "11";
+    }
+
+</script>
 
 </body>
 </html>

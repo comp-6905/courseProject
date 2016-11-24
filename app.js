@@ -9,14 +9,14 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var multer          =       require('multer');
 var upload      =   multer({ dest: './public/images/userpicture/'});
-
+var session = require('express-session')
 // Mongo instance local passport
 var mongoose = require('mongoose');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 var mongo = require('mongodb');
 var monk = require('monk');
-var db = monk('localhost:27017/ghelp');
+var db = monk('localhost:27017/mcarshare');
 //defining that we are using route
 var routes = require('./routes/index');
 var users = require('./routes/users');
@@ -38,9 +38,11 @@ app.set('view engine', 'jade');
 var cons = require('consolidate');
 
 // view engine setup
-app.engine('html', cons.swig)
+app.engine('html', cons.swig);
+app.engine('jade', cons.jade);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'html');
+
 
 // uncomment after placing your favicon in /public
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
@@ -72,7 +74,7 @@ passport.use(new LocalStrategy(Account.authenticate()));
 passport.serializeUser(Account.serializeUser());
 passport.deserializeUser(Account.deserializeUser());
 
-mongoose.connect('mongodb://localhost/ghelp');
+mongoose.connect('mongodb://localhost/mcarshare');
 
 
 

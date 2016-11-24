@@ -8,20 +8,17 @@ var Account = new Schema({
     _id :  {type: Number, required: true},
     firstName : {type: String, required: true},
     lastName : {type: String, required: true},
-    program : {type: String, required: true},
-    semester: {type: String, required: true},
-    mobile : {type: String, required: true},
-    dob : {type: String},
-    sex : {type: String,required: true},
-    country : {type: String},
-    status : {type: String},
-    preference: {type: String,required: true},
+    // mobile : {type: String, required: true},
+    // dob : {type: String},
+    // sex : {type: String,required: true},
+    // country : {type: String},
+    // status : {type: String},
+    // preference: {type: String,required: true},
     date : Date,
     assigned: {type: Boolean, default: false},
-    mentor: {type: Number, ref: 'Mentor'},
-    hostRequest: {type: String},
-    hostFamily: {type: String, ref: 'Hostfamily'}
-    
+    car: {type: Number, ref: 'Car'},
+    reservation: {type: String, ref: 'Reservation'}
+
 
 });
 
@@ -30,4 +27,4 @@ var Account = new Schema({
 
 Account.plugin(passportLocalMongoose);
 
-module.exports = mongoose.model('student', Account);
+module.exports = mongoose.model('customer', Account);
