@@ -1,0 +1,352 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    //if IE
+      meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    title  MCar Share 
+    // Favicon
+    link(rel='apple-touch-icon-precomposed', sizes='144x144', href='assets/ico/apple-touch-icon-144-precomposed.png')
+    link(rel='shortcut icon', href='images/logo1.png')
+    // CSS Global
+    link(href='assets/plugins/bootstrap/css/bootstrap.min.css', rel='stylesheet')
+    link(href='assets/plugins/bootstrap-select/css/bootstrap-select.min.css', rel='stylesheet')
+    link(href='assets/plugins/fontawesome/css/font-awesome.min.css', rel='stylesheet')
+    link(href='assets/plugins/prettyphoto/css/prettyPhoto.css', rel='stylesheet')
+    link(href='assets/plugins/owl-carousel2/assets/owl.carousel.min.css', rel='stylesheet')
+    link(href='assets/plugins/owl-carousel2/assets/owl.theme.default.min.css', rel='stylesheet')
+    link(href='assets/plugins/animate/animate.min.css', rel='stylesheet')
+    link(href='assets/plugins/swiper/css/swiper.min.css', rel='stylesheet')
+    link(href='assets/plugins/datetimepicker/css/bootstrap-datetimepicker.min.css', rel='stylesheet')
+    // Theme CSS
+    link(href='assets/css/theme.css', rel='stylesheet')
+    // Head Libs
+    script(src='assets/plugins/modernizr.custom.js')
+    //if lt IE 9
+      script(src='assets/plugins/iesupport/html5shiv.js')
+      script(src='assets/plugins/iesupport/respond.min.js')
+  body#home.wide
+    // PRELOADER
+    #preloader
+      #preloader-status
+        .spinner
+          .rect1
+          .rect2
+          .rect3
+          .rect4
+          .rect5
+        #preloader-title Loading
+    // /PRELOADER
+    // WRAPPER
+    .wrapper
+      // HEADER
+      header.header.fixed
+        .header-wrapper
+          .container
+            // Logo
+            .logo
+              a(href='index.html')
+                img(src='images/logo1.png', alt='MCar Share')
+            // /Logo
+            // Mobile menu toggle button
+            a.menu-toggle.btn.ripple-effect.btn-theme-transparent(href='#')
+              i.fa.fa-bars
+            // /Mobile menu toggle button
+            // Navigation
+            nav.navigation.closed.clearfix
+              .swiper-wrapper
+                .swiper-slide
+                  // navigation menu
+                  a.menu-toggle-close.btn(href='#')
+                    i.fa.fa-times
+                  ul.nav.sf-menu
+                    li
+                      a(href='/home') Home
+                    li
+                      a(href='/logout') Logout
+                    li
+                      ul.social-icons
+                        li
+                          a.facebook(href='https://www.facebook.com/ok.samjackson')
+                            i.fa.fa-facebook
+                        li
+                          a.twitter(href='#')
+                            i.fa.fa-twitter
+                        li
+                          a.instagram(href='#')
+                            i.fa.fa-instagram
+                        li
+                          a.pinterest(href='#')
+                            i.fa.fa-pinterest
+                  // /navigation menu
+              // Add Scroll Bar
+              .swiper-scrollbar
+            // /Navigation
+      // /HEADER
+      // PAGE
+      // /CONTENT AREA
+      .content-area
+        // BREADCRUMBS
+        section.page-section.breadcrumbs.text-center
+          .container
+            .page-header
+              h1 Admininstrator Tool
+            ul.breadcrumb
+              li
+                a(href='index.html') Home
+              li.active Login
+        // /BREADCRUMBS
+        // PAGE
+        section.page-section.color
+          .container
+            .row
+              .col-sm-6
+                h3.block-title
+                  span Car List
+                table#myTable(style='width:100%')
+                  tr(style='font-weight:bold')
+                    td CarID
+                    td Brand
+                    td Class
+                    td Price
+                    td Location
+                    td License
+                    //- td Color
+                    //- td Customer
+                  each car, i in cars
+                    tr
+                        
+                        td #{car._id}
+                        td #{car.brand}
+                        td #{car.classType}
+                        td #{car.price}
+                        td #{car.parkLocation}
+                        td #{car.license}
+                        //- td #{car.color}
+                        //- td #{car.customer}
+        
+              .col-sm-6
+                h3.block-title
+                  span Add New Car
+                form.create-account(action='#')
+                  .row
+                    .col-md-12.hello-text-wrap
+                      span.hello-text.text-thin Add Detail Below
+                form.form-login(action='/addcar', method='post')
+                  .row
+                    .col-md-12
+                      .form-group
+                        input.form-control(type='text', placeholder='Please Input Car ID:201601001', name='CarID')
+                    .col-md-12
+                      .form-group
+                        input.form-control(type='text', placeholder='Please Input Car Brand:Ford', name='Brand')
+                    .col-md-12
+                      .form-group
+                        input.form-control(type='text', placeholder='Please Input Car Class: A,B,C', name='Class')
+                    .col-md-12
+                      .form-group
+                        input.form-control(type='text', placeholder='Please Input Rent Price: 20', name='Price')
+                    .col-md-12
+                      .form-group
+                        input.form-control(type='text', placeholder='Please Input Location of Car', name='Location')
+                    .col-md-12
+                      .form-group
+                        input.form-control(type='text', placeholder='Please Input License of Car', name='License')
+                    .col-md-12
+                      .form-group
+                        input.form-control(type='text', placeholder='Description of Car', name='Color')
+                    .col-md-12
+                      .form-group
+                        input.form-control(type='hidden', name='Customer')
+                    .col-md-6
+                      input.btn.btn-theme.btn-block.btn-theme-dark(type='submit', value='Add')
+        // PAGE
+        // PAGE
+        section.page-section
+          .container
+            h2.section-title.wow.fadeInDown(data-wow-offset='200', data-wow-delay='100ms')
+              small Do You Have Any Question or Anything else 
+              span Costumer service
+            // Team row
+            .row
+              // Team 1
+              .col-md-3.col-sm-6.wow.fadeInDown(data-wow-offset='200', data-wow-delay='100ms')
+                .thumbnail.thumbnail-team.no-border.no-padding
+                  .media
+                    img(src='assets/img/preview/team/team-270x270x1.jpg', alt='')
+                  .caption
+                    h4.caption-title
+                      | Samuel Owusu 
+                      small Costumer Service
+                    ul.team-details
+                      li Skype: oksamjackson
+                      li Tel: 780 266-7090
+                      li
+                        a(href='') supportname@gmail.com
+              // /Team 1
+              // Team 2
+              .col-md-3.col-sm-6.wow.fadeInDown(data-wow-offset='200', data-wow-delay='200ms')
+                .thumbnail.thumbnail-team.no-border.no-padding
+                  .media
+                    img(src='assets/img/preview/team/team-270x270x2.jpg', alt='')
+                  .caption
+                    h4.caption-title
+                      | Huizhong Liu 
+                      small Team Title
+                    ul.team-details
+                      li Skype: team.member
+                      li Tel: 555 555-5555
+                      li
+                        a(href='mailto:supportname@gmail.com') supportname@gmail.com
+              // /Team 2
+              // Team 3
+              .col-md-3.col-sm-6.wow.fadeInDown(data-wow-offset='200', data-wow-delay='300ms')
+                .thumbnail.thumbnail-team.no-border.no-padding
+                  .media
+                    img(src='assets/img/preview/team/team-270x270x3.jpg', alt='')
+                  .caption
+                    h4.caption-title
+                      | Jia Luo 
+                      small Tech-Support
+                    ul.team-details
+                      li Skype: team.member
+                      li Tel: 555 555-5555
+                      li
+                        a(href='mailto:supportname@gmail.com') supportname@gmail.com
+              // /Team 3
+              // Team 4
+              .col-md-3.col-sm-6.wow.fadeInDown(data-wow-offset='200', data-wow-delay='400ms')
+                .thumbnail.thumbnail-team.no-border.no-padding
+                  .media
+                    img(src='assets/img/preview/team/team-270x270x4.jpg', alt='')
+                  .caption
+                    h4.caption-title
+                      | Mark Osaboro 
+                      small Costumer Service
+                    ul.team-details
+                      li Skype: team.member
+                      li Tel: 555 555-5555
+                      li
+                        a(href='mailto:supportname@gmail.com') supportname@gmail.com
+              // Team 4
+            // /Team row
+        // /PAGE
+        // PAGE
+        section.page-section.contact.dark
+          .container
+            // Get in touch
+            h2.section-title.wow.fadeInDown(data-wow-offset='200', data-wow-delay='100ms')
+              small Feel Free to Say Hello!
+              span Get in Touch With Us
+            .row
+              .col-md-6.wow.fadeInLeft(data-wow-offset='200', data-wow-delay='200ms')
+                // Contact form
+                form#contact-form.contact-form(name='contact-form', method='post', action='#')
+                  .row
+                    .col-md-6
+                      .outer.required
+                        .form-group.af-inner.has-icon
+                          label.sr-only(for='name') Name
+                          input#name.form-control.placeholder(type='text', name='name', placeholder='Name', value='', size='30', data-toggle='tooltip', title='Name is required')
+                          span.form-control-icon
+                            i.fa.fa-user
+                    .col-md-6
+                      .outer.required
+                        .form-group.af-inner.has-icon
+                          label.sr-only(for='email') Email
+                          input#email.form-control.placeholder(type='text', name='email', placeholder='Email', value='', size='30', data-toggle='tooltip', title='Email is required')
+                          span.form-control-icon
+                            i.fa.fa-envelope
+                  .outer.required
+                    .form-group.af-inner.has-icon
+                      label.sr-only(for='subject') Subject
+                      input#subject.form-control.placeholder(type='text', name='subject', placeholder='Subject', value='', size='30', data-toggle='tooltip', title='Subject is required')
+                      span.form-control-icon
+                        i.fa.fa-bars
+                  .form-group.af-inner.has-icon
+                    label.sr-only(for='input-message') Message
+                    textarea#input-message.form-control.placeholder(name='message', placeholder='Message', rows='4', cols='50', data-toggle='tooltip', title='Message is required')
+                    span.form-control-icon
+                      i.fa.fa-bars
+                  .outer.required
+                    .form-group.af-inner
+                      input#submit_btn.form-button.form-button-submit.btn.btn-block.btn-theme.ripple-effect.btn-theme-dark(type='submit', name='submit', value='Send message')
+                // /Contact form
+              .col-md-6.wow.fadeInRight(data-wow-offset='200', data-wow-delay='200ms')
+                p
+                  | This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum.
+                ul.media-list.contact-list
+                  li.media
+                    .media-left
+                      i.fa.fa-home
+                    .media-body Adress: Memorial University of Newfoundland
+                  li.media
+                    .media-left
+                      i.fa.fa
+                    .media-body St. John's, NL.
+                  li.media
+                    .media-left
+                      i.fa.fa-phone
+                    .media-body Support Phone: +1 780-266-7090
+                  li.media
+                    .media-left
+                      i.fa.fa-envelope
+                    .media-body E mails: sko336@mun.ca
+                  li.media
+                    .media-left
+                      i.fa.fa-clock-o
+                    .media-body Working Hours: 09:30-21:00 except on Sundays
+                  li.media
+                    .media-left
+                      i.fa.fa-map-marker
+                    .media-body View on The Map
+            // /Get in touch
+        // /PAGE
+      // /CONTENT AREA
+      footer.footer
+        .footer-meta
+          .container
+            .row
+              .col-sm-12
+                p.btn-row.text-center
+                  a.btn.btn-theme.ripple-effect.btn-icon-left.facebook.wow.fadeInDown(href='https://www.facebook.com/ok.samjackson', data-wow-offset='20', data-wow-delay='100ms')
+                    i.fa.fa-facebook
+                    | FACEBOOK
+                  a.btn.btn-theme.btn-icon-left.ripple-effect.twitter.wow.fadeInDown(href='#', data-wow-offset='20', data-wow-delay='200ms')
+                    i.fa.fa-twitter
+                    | TWITTER
+                  a.btn.btn-theme.btn-icon-left.ripple-effect.pinterest.wow.fadeInDown(href='#', data-wow-offset='20', data-wow-delay='300ms')
+                    i.fa.fa-pinterest
+                    | PINTEREST
+                  a.btn.btn-theme.btn-icon-left.ripple-effect.google.wow.fadeInDown(href='#', data-wow-offset='20', data-wow-delay='400ms')
+                    i.fa.fa-google
+                    | GOOGLE
+                .copyright © 2016 MCar Share — 
+      // /FOOTER
+      #to-top.to-top
+        i.fa.fa-angle-up
+    // /WRAPPER
+    // JS Global
+    script(src='assets/plugins/jquery/jquery-1.11.1.min.js')
+    script(src='assets/plugins/bootstrap/js/bootstrap.min.js')
+    script(src='assets/plugins/bootstrap-select/js/bootstrap-select.min.js')
+    script(src='assets/plugins/superfish/js/superfish.min.js')
+    script(src='assets/plugins/prettyphoto/js/jquery.prettyPhoto.js')
+    script(src='assets/plugins/owl-carousel2/owl.carousel.min.js')
+    script(src='assets/plugins/jquery.sticky.min.js')
+    script(src='assets/plugins/jquery.easing.min.js')
+    script(src='assets/plugins/jquery.smoothscroll.min.js')
+    // <script src="assets/plugins/smooth-scrollbar.min.js"></script>
+    // <script src="assets/plugins/wow/wow.min.js"></script>
+    script.
+      // WOW - animated content
+      //new WOW().init();
+    script(src='assets/plugins/swiper/js/swiper.jquery.min.js')
+    script(src='assets/plugins/datetimepicker/js/moment-with-locales.min.js')
+    script(src='assets/plugins/datetimepicker/js/bootstrap-datetimepicker.min.js')
+    // JS Page Level
+    script(src='assets/js/theme-ajax-mail.js')
+    script(src='assets/js/theme.js')
+    script(src='https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false')
+    
