@@ -6,6 +6,8 @@ Group-3
 
 ## Current Progress:
 
+Final version
+
 Master branch - use cases implementation
 
 > Customer Login module
@@ -14,29 +16,22 @@ Master branch - use cases implementation
 
 > Customer Register module
 
-> Car listing for Customer
+> Car listing for Customer/Visitor
 
 > Car listing for Admin
 
-> Add car to system by Admin
+> Car management by Admin
+
+> Payment by Customer
+
+> Reservation page
+
+> Info/Contact page
 
 > MongoDB database handling
 
-FrontEnd branch - Design for front-end views and implementation
+
 
 For testing system:
 
 > Administrator is the user registered with name 'admin';
-
-
-
-
-Prototype including:
-
-> First page
-
-> About page
-
-> Register page
-
-> Login page
